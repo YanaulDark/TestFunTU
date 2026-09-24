@@ -1,6 +1,7 @@
 use std::io;
+pub mod control_module;
 pub mod frrr;
-pub mod async_module;
+//pub mod async_module;
 
 fn maybe() -> u8 {
     println!("Maybe. Maybe... Don't today.");
@@ -42,8 +43,9 @@ fn main() {
     };
     maybe();
     frrr::frrr();
-    let _AcMeToFn = async_module::tokiofn();
+//    let _AcMeToFn = async_module::tokiofn();
     let may: u64 = frrr::fac(10).into();
-    println!("{:?}", _AcMeToFn);
-    println!("{}", may)
+//    println!("{:?}", _AcMeToFn);
+    println!("{}", may);
+    control_module::read_center();
 }

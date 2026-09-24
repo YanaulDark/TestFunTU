@@ -11,21 +11,21 @@ pub async fn tokiofn() -> Result<(), Box<dyn std::error::Error>> {
         tokio::spawn(async move {
             let mut buf = [0; 1024];
 
-            // В цикле читаем данные из сокета и отправляем их обратно.
+            // In a loop, read data from the socket and write the data back.
             loop {
                 let n = match socket.read(&mut buf).await {
-                    // сокет закрыт
+                    // socket closed
                     Ok(0) => return,
                     Ok(n) => n,
                     Err(e) => {
-                        eprintln!("не удалось прочитать из сокета; err = {:?}", e);
+                        eprintln!("failed to read from socket; err = {:?}", e);
                         return;
                     }
                 };
 
-                // Отправляем данные обратно
+                // Write the data back
                 if let Err(e) = socket.write_all(&buf[0..n]).await {
-                    eprintln!("не удалось записать в сокет; err = {:?}", e);
+                    eprintln!("failed to write to socket; err = {:?}", e);
                     return;
                 }
             }
