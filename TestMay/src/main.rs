@@ -1,6 +1,7 @@
 use std::io;
 pub mod control_module;
 pub mod frrr;
+pub mod yareys;
 //pub mod async_module;
 
 fn maybe() -> u8 {
@@ -47,5 +48,6 @@ fn main() {
     let may: u64 = frrr::fac(10).into();
 //    println!("{:?}", _AcMeToFn);
     println!("{}", may);
+    yareys::hello_user(&username_text);
     control_module::read_center();
 }
