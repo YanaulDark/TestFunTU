@@ -1,0 +1,2 @@
+window.ALL_CRATES = ["ai_bot_with_may_threads","bytes","cfg_if","errno","libc","lock_api","mio","parking_lot","parking_lot_core","pin_project_lite","proc_macro2","quote","scopeguard","signal_hook_registry","smallvec","socket2","syn","tokio","tokio_macros","unicode_ident"];
+//{"start":21,"fragment_lengths":[25,8,9,8,7,11,6,14,19,19,14,8,13,23,11,10,6,8,15,16]}
